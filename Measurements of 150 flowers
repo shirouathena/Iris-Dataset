@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.datasets import load_iris
-# loading raw data
+# I am loading the Iris dataset which contains 150 samples of 3 flower species.
+# This is my "Ground Truth" data for training
 iris_data = load_iris()
 # converting into a table 
 df= pd.DataFrame(data=iris_data.data, columns=iris_data.feature_names)
