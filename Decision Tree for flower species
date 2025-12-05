@@ -1,0 +1,19 @@
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+#questions(x) answers(y)
+x = iris_data.data 
+#measurements
+y = iris_data.target
+#species names (0,1,2)
+#splitting data 80% for training 20% for test
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+#creating brain (decision tree)
+model = DecisionTreeClassifier()
+#teaching the brain (fit)
+model.fit(x_train, y_train)
+#take the test (predict)
+predictions = model.predict(x_test)
+#check the accuracy
+accuracy = accuracy_score(y_test, predictions)
+print("Accuracy:", accuracy)
