@@ -1,0 +1,9 @@
+import pandas as pd
+from sklearn.datasets import load_iris
+# loading raw data
+iris_data = load_iris()
+# converting into a table 
+df= pd.DataFrame(data=iris_data.data, columns=iris_data.feature_names)
+#answer key
+df['species'] = iris_data.target
+print(df.head())
